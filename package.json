@@ -1,0 +1,39 @@
+{
+  "name": "npm-workspaces",
+  "version": "1.0.0",
+  "description": "Test project to try npm workspaces",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build --workspaces && npm run build",
+    "build": "tsc",
+    "test": "node dist/index.js",
+    "start": "nodemon server.js"
+  },
+  "workspaces": [
+    "a",
+    "b"
+  ],
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "npm-workspaces-lib-a": "1.0.0",
+    "npm-workspaces-lib-b": "1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "@types/node": "^15.6.0",
+    "typescript": "^3.9.9"
+  },
+  "keywords": [
+    "npm",
+    "workspaces"
+  ],
+  "author": "twopelu <twopelu@hotmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/twopelu/npm-workspaces.git"
+  },
+  "homepage": "https://github.com/twopelu/npm-workspaces#readme"
+}

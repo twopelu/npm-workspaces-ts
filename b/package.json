@@ -1,0 +1,27 @@
+{
+  "name": "npm-workspaces-lib-b",
+  "version": "1.0.0",
+  "description": "Library B with sus() function",
+  "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "test": "node dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^3.9.9"
+  },
+  "keywords": [
+    "npm3"
+  ],
+  "author": "twopelu <twopelu@hotmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://www.npmjs.com/package/how-npm3-works-lib-b"
+  }
+}
