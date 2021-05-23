@@ -8,16 +8,16 @@ See official docs in https://docs.npmjs.com/cli/v7/using-npm/workspaces.
 
 The structure of the project is as follows:
 
+```
 .
 +-- package.json
 `-- a
    `-- package.json
 `-- b
    `-- package.json
+```
 
 The main folder contains a index.ts file which depends on a and b modules.
-
-main --> a --> b
 
 Both a and b modules are defined as workspaces in the main package.json:
 
@@ -30,17 +30,19 @@ Both a and b modules are defined as workspaces in the main package.json:
 
 Run `npm install` to build all the modules and create the symlinks:
 
+```
 .
 +-- node_modules
-|  `-- workspace-a -> ../a
-|  `-- workspace-b -> ../b
+|  `-- npm-workspaces-lib-a -> ../a
+|  `-- npm-workspaces-lib-b -> ../b
 +-- package.json
-`-- workspace-a
+`-- a
    `-- package.json
-`-- workspace-b
+`-- b
    `-- package.json
+```
 
-## Build TypeScript Workspaces
+## Using TypeScript with Workspaces
 
 To make workspaces work with TypeScript all modules have to be compiled previously.
 
@@ -87,15 +89,15 @@ export function add(a: number, b: number) {
 
 The main folder contains a server.ts script to check hot-reloading.
 
-Install the nodemon package so server is hot-realoaded when changes.
+Install the **nodemon** package to have hot-realoaded when changes.
 
-npm install --save-dev nodemon
+`npm install --save-dev nodemon`
 
-Then follow these steps:
+Then follow these steps from main folder:
 
-1. cd a && tsc --watch
-2. cd a && tsc --watch
-3. tsc --watch
-4. npm start
+1. `cd a && tsc --watch`
+2. `cd b && tsc --watch`
+3. `tsc --watch`
+4. `npm start`
 
 Then make changes in a or b and see logs.
